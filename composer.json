@@ -1,7 +1,11 @@
 {
     "name": "firith/b5-project-generator",
     "description": "Generate b5 project.",
-    "keywords": ["b5", "laravel", "symfony"],
+    "keywords": [
+        "b5",
+        "laravel",
+        "symfony"
+    ],
     "homepage": "https://github.com/firith/b5-project-generator",
     "type": "project",
     "license": "MIT",
@@ -21,7 +25,6 @@
     "require-dev": {
         "laravel-zero/framework": "^8.0",
         "mockery/mockery": "^1.4.2",
-        "padraic/phar-updater": "^1.0.6",
         "pestphp/pest": "^0.3"
     },
     "autoload": {
@@ -41,5 +44,7 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "bin": ["builds/b5-project"]
+    "bin": [
+        "builds/b5-project"
+    ]
 }
