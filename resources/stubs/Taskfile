@@ -1,0 +1,20 @@
+task:run() {
+    docker:docker-compose up "$@"
+}
+
+task:halt() {
+    docker:docker-compose down "$@"
+}
+
+task:docker-compose() {
+    docker:docker-compose "$@"
+}
+
+task:composer() {
+    docker:command:composer "$@"
+}
+
+task:yarn() {
+    docker:command:yarn "$@"
+}
+

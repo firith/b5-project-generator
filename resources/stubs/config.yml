@@ -1,0 +1,14 @@
+project:
+    key: {{ appName }}
+
+modules:
+    docker:
+        commands:
+            composer:
+                bin: composer
+                service: php
+                workdir: /app/{{ appName }}
+            yarn:
+                bin: yarn
+                service: node
+                workdir: /app/{{ appName }}

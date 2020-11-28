@@ -1,27 +1,27 @@
 {
-    "name": "laravel-zero/laravel-zero",
-    "description": "The Laravel Zero Framework.",
-    "keywords": ["framework", "laravel", "laravel zero", "console", "cli"],
-    "homepage": "https://laravel-zero.com",
+    "name": "firith/b5-project-generator",
+    "description": "Generate b5 project.",
+    "keywords": ["b5", "laravel", "symfony"],
+    "homepage": "https://github.com/firith/b5-project-generator",
     "type": "project",
     "license": "MIT",
     "support": {
-        "issues": "https://github.com/laravel-zero/laravel-zero/issues",
-        "source": "https://github.com/laravel-zero/laravel-zero"
+        "issues": "https://github.com/firith/b5-project-generator/issues",
+        "source": "https://github.com/firith/b5-project-generator"
     },
     "authors": [
         {
-            "name": "Nuno Maduro",
-            "email": "enunomaduro@gmail.com"
+            "name": "Balázs Simon",
+            "email": "balazs@firith.dev"
         }
     ],
     "require": {
-        "php": "^7.3",
-        "laravel-zero/framework": "^8.0",
-        "padraic/phar-updater": "^1.0.6"
+        "php": "^7.4"
     },
     "require-dev": {
+        "laravel-zero/framework": "^8.0",
         "mockery/mockery": "^1.4.2",
+        "padraic/phar-updater": "^1.0.6",
         "pestphp/pest": "^0.3"
     },
     "autoload": {
@@ -41,5 +41,5 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "bin": ["application"]
+    "bin": ["builds/b5-project"]
 }
