@@ -1,0 +1,22 @@
+project:
+    key: {{ appName }}
+
+modules:
+    docker:
+        commands:
+            composer:
+                bin: composer
+                service: php
+                workdir: /app/{{ appName }}
+            artisan:
+                bin: ["php", "./artisan"]
+                service: php
+                workdir: /app/{{ appName }}
+            phpunit:
+                bin: ["php", "./vendor/bin/phpunit"]
+                service: php
+                workdir: /app/{{ appName }}
+            yarn:
+                bin: yarn
+                service: node
+                workdir: /app/{{ appName }}

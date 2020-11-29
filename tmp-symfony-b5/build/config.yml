@@ -1,0 +1,18 @@
+project:
+    key: tmp-symfony
+
+modules:
+    docker:
+        commands:
+            composer:
+                bin: composer
+                service: php
+                workdir: /app/tmp-symfony
+            console:
+                bin: ["php", "./bin/console"]
+                service: php
+                workdir: /app/tmp-symfony
+            yarn:
+                bin: yarn
+                service: node
+                workdir: /app/tmp-symfony

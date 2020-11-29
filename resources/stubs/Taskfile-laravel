@@ -1,0 +1,28 @@
+task:run() {
+    docker:docker-compose up "$@"
+}
+
+task:halt() {
+    docker:docker-compose down "$@"
+}
+
+task:docker-compose() {
+    docker:docker-compose "$@"
+}
+
+task:artisan() {
+    docker:command:artisan "$@"
+}
+
+task:phpunit() {
+    docker:command:phpunit "$@"
+}
+
+task:composer() {
+    docker:command:composer "$@"
+}
+
+task:yarn() {
+    docker:command:yarn "$@"
+}
+

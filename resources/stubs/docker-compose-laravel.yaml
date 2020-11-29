@@ -7,6 +7,7 @@ services:
             dockerfile: build/configs/php/Dockerfile
         volumes:
             - ../:/app
+            - laravel_framework_cache:/app/{{ appName }}/storage/framework
         networks:
             - default
             - traefik
@@ -42,3 +43,6 @@ networks:
     traefik:
         external:
             name: traefik-gateway
+
+volumes:
+    laravel_framework_cache:

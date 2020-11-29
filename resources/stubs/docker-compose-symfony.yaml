@@ -7,6 +7,7 @@ services:
             dockerfile: build/configs/php/Dockerfile
         volumes:
             - ../:/app
+            - symfony_framework_cache:/app/{{ appName }}/var/cache
         networks:
             - default
             - traefik
@@ -42,3 +43,6 @@ networks:
     traefik:
         external:
             name: traefik-gateway
+
+volumes:
+    symfony_framework_cache:
