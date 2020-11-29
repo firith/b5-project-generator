@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use LaravelZero\Framework\Commands\Command;
 use Symfony\Component\Console\Exception\InvalidArgumentException;
+use Symfony\Component\Process\Process;
 
 class InitCommand extends Command
 {
@@ -71,9 +72,27 @@ class InitCommand extends Command
             });
         }
 
-        $this->task('Installing framework', function () {
+        if ($this->option('install') && $this->option('framework') === 'laravel') {
+            $this->task('Installing laravel framework', function () {
+                Storage::disk('cwd')->deleteDirectory($this->parentDirectory . '/' . $this->argument('app-name'));
+                $process = new Process(
+                    ['composer', 'create-project', '--prefer-dist', 'laravel/laravel', $this->appName],
+                    Storage::disk('cwd')->path($this->parentDirectory));
+                $process->run();
+                $this->output->writeln($process->getOutput());
+            });
+        }
 
-        });
+        if ($this->option('install') && $this->option('framework') === 'symfony') {
+            $this->task('Installing symfony framework', function () {
+                Storage::disk('cwd')->deleteDirectory($this->parentDirectory . '/' . $this->argument('app-name'));
+                $process = new Process(
+                    ['composer', 'create-project', 'symfony/website-skeleton', $this->appName],
+                    Storage::disk('cwd')->path($this->parentDirectory));
+                $process->run();
+                $this->output->writeln($process->getOutput());
+            });
+        }
 
         $this->task('Initialize git', function () {
             // Todo gitignore és gitkeep

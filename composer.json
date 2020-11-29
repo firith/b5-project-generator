@@ -25,7 +25,8 @@
     "require-dev": {
         "laravel-zero/framework": "^8.0",
         "mockery/mockery": "^1.4.2",
-        "pestphp/pest": "^0.3"
+        "pestphp/pest": "^0.3",
+        "symfony/process": "^5.1"
     },
     "autoload": {
         "psr-4": {
