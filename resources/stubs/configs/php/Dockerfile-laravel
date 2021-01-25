@@ -3,3 +3,5 @@ FROM docker.team23.de/docker/php:7.4
 ADD ./{{ appName }}/storage/framework /app/{{ appName }}/storage/framework
 RUN chown -R www-data:www-data /app/{{ appName }}/storage/framework
 RUN chmod -R g+w /app/{{ appName }}/storage/framework
+
+WORKDIR /app/{{ appName }}

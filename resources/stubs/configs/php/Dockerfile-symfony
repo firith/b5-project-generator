@@ -3,3 +3,5 @@ FROM docker.team23.de/docker/php:7.4
 ADD ./{{ appName }}/var/cache /app/{{ appName }}/var/cache
 RUN chown -R www-data:www-data /app/{{ appName }}/var/cache
 RUN chmod -R g+w /app/{{ appName }}/var/cache
+
+WORKDIR /app/{{ appName }}
